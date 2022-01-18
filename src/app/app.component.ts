@@ -32,11 +32,22 @@ export class AppComponent {
     },
   ];
 
+  loadedAfter4 = false;
+  loadedAfter3 = false;
+  loadedAfter2 = false;
   incorrectExample$ = new BehaviorSubject<DrawerNavItem[]>([]);
 
   ngOnInit() {
     this.incorrectExample$.next(this.correctExample.map(n => ({...n, title: 'Node 1 (not working correctly)'})));
-
+    setTimeout(() => {
+      this.loadedAfter4 = true;
+    }, 4000);
+    setTimeout(() => {
+      this.loadedAfter3 = true;
+    }, 3000);
+    setTimeout(() => {
+      this.loadedAfter2 = true;
+    }, 2000);
   }
 
   ngAfterViewInit() {
