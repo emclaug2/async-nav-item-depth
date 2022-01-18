@@ -1,0 +1,160 @@
+@import '../../../utility/utility';
+
+/* RTL */
+[dir='rtl'] .blui-drawer-nav-item-content {
+    .blui-drawer-nav-item-active-highlight {
+        right: 0;
+        &.blui-drawer-nav-item-active-round {
+            border-radius: 1.5rem 0 0 1.5rem;
+        }
+    }
+    .blui-drawer-nav-item-depth-3 {
+        padding-left: 0;
+        padding-right: 32px;
+    }
+    blui-info-list-item.blui-drawer-nav-item-no-icon-closed .blui-info-list-item .mat-list-item-content {
+        padding-right: 16px;
+        padding-left: 24px;
+    }
+}
+
+blui-drawer-nav-item {
+    outline: none;
+    .blui-drawer-nav-item-active .mat-list-item:hover {
+        background: unset;
+    }
+}
+
+.blui-drawer-condensed-rail .blui-drawer-nav-item-content .blui-drawer-nav-item-rail {
+    min-height: 3.5rem;
+    .blui-drawer-nav-item-rail-text {
+        display: none;
+    }
+}
+
+.blui-drawer-nav-item-content {
+    overflow: hidden;
+    position: relative;
+    user-select: none;
+
+    &.blui-drawer-nav-item-compact {
+        margin-top: 0.5rem;
+        margin-bottom: 0.5rem;
+        .blui-info-list-item-content {
+            &.blui-info-list-item-dense,
+            .mat-list-item-content {
+                height: 2.5rem !important;
+            }
+        }
+    }
+    .blui-drawer-nav-item-depth-1 {
+        padding-left: 0;
+    }
+    .blui-drawer-nav-item-depth-2 {
+        padding-left: 0;
+    }
+    .blui-drawer-nav-item-depth-3 {
+        padding-left: 32px;
+    }
+
+    .blui-info-list-item .mat-list-item.blui-info-list-item-content .mat-list-text .blui-info-list-item-title-wrapper {
+        font-weight: 400; // Default font-weight for nav items.
+    }
+    &.blui-drawer-nav-item-active,
+    &.blui-drawer-nav-item-active-tree {
+        .blui-info-list-item
+            .mat-list-item.blui-info-list-item-content
+            .mat-list-text
+            .blui-info-list-item-title-wrapper {
+            font-weight: 600; // Default font-weight for active nav item parents.
+        }
+    }
+
+    blui-info-list-item {
+        display: flex;
+        flex-direction: column;
+        mat-list-item {
+            z-index: 1; // Used to keep text and icon above on-select highlight.
+        }
+
+        // This class is used to hide a nav-item's clipped title when collapsed with no icon.
+        &.blui-drawer-nav-item-no-icon-closed .blui-info-list-item .mat-list-item-content {
+            padding-right: 24px;
+        }
+    }
+
+    .blui-info-list-item .blui-info-list-item-icon-wrapper {
+        padding: 0;
+    }
+
+    .blui-drawer-nav-item-active-highlight {
+        display: flex;
+        z-index: 0;
+        position: absolute;
+        height: 100%;
+        left: 0;
+        top: 0;
+        &.blui-drawer-nav-item-active-round {
+            width: calc(100% - 0.5rem);
+            border-radius: 0 1.5rem 1.5rem 0;
+        }
+        &.blui-drawer-nav-item-active-square {
+            border-radius: 0;
+            width: 100%;
+        }
+    }
+
+    .blui-drawer-nav-item-expand-icon {
+        transition: 300ms;
+        @include scale-icon-content();
+        &.blui-drawer-nav-item-expanded {
+            transform: rotate(180deg);
+        }
+    }
+    .blui-drawer-nav-item-rail-container {
+        z-index: 1;
+        display: flex;
+        flex-direction: column;
+        .mat-icon {
+            @include scale-icon-content();
+        }
+    }
+    .blui-drawer-nav-item-rail {
+        z-index: 1;
+        display: flex;
+        flex-direction: column;
+        min-height: 4.5rem;
+        width: calc(3.5rem + 16px);
+        justify-content: center;
+        align-items: center;
+        padding: 1rem 8px;
+        box-sizing: border-box;
+        cursor: pointer;
+        text-align: center;
+        * {
+            z-index: 1; // Keep items above the highlight.
+        }
+        .blui-drawer-nav-item-rail-text {
+            font-size: 0.75rem;
+            line-height: 1rem;
+            word-break: break-word;
+            hyphens: auto;
+        }
+    }
+}
+
+.blui-drawer-nested-nav-item {
+    .blui-info-list-item .mat-list-item-content {
+        padding-left: 16px;
+    }
+    .mat-expansion-panel-body {
+        padding: 0;
+    }
+    .mat-expansion-panel:not([class*='mat-elevation-z']) {
+        box-shadow: unset;
+    }
+    &.mat-accordion .mat-expansion-panel:last-of-type,
+    &.mat-accordion .mat-expansion-panel:first-of-type {
+        border-radius: 0;
+    }
+}

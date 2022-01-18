@@ -1,0 +1,18 @@
+.blui-hero-banner {
+    display: flex;
+}
+
+.blui-hero-banner-content {
+    display: flex;
+    flex: 1 1 0;
+    align-items: center;
+    justify-content: center;
+
+    blui-hero {
+        flex: 1 1 0;
+    }
+
+    blui-hero:nth-child(n + 5) {
+        display: none;
+    }
+}

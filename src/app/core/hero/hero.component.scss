@@ -1,0 +1,66 @@
+.blui-hero {
+    display: flex;
+}
+
+/* RTL */
+[dir='rtl'] .blui-hero-content {
+    .blui-hero-primary-wrapper {
+        display: flex;
+        justify-content: flex-end;
+    }
+}
+
+.blui-hero-content {
+    display: flex;
+    flex: 1 1 0;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    font-size: 1rem;
+    overflow: hidden;
+    padding: 1rem 8px;
+
+    .blui-hero-primary-wrapper {
+        border-radius: 50%;
+        margin-bottom: 0.5rem;
+        text-align: center;
+    }
+
+    .blui-hero-channel-value-wrapper {
+        display: flex;
+        font-size: 1.25rem;
+    }
+
+    .blui-hero-label {
+        font-size: inherit;
+        line-height: 1.2;
+        letter-spacing: 0;
+        font-weight: 600;
+        width: 100%;
+        text-align: center;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        margin: 0;
+    }
+
+    .blui-hero-primary-wrapper {
+        * {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 100%;
+        }
+        &:not(.blui-hero-svgIcon) > * {
+            width: 100%;
+            height: 100%;
+            svg {
+                width: 100%;
+                height: 100%;
+            }
+        }
+        &.blui-hero-svgIcon svg {
+            transform-origin: top left;
+        }
+    }
+}

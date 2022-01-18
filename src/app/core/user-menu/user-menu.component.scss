@@ -1,0 +1,83 @@
+@import '../utility/utility';
+$size: 2.5rem;
+
+.blui-user-menu {
+    display: flex;
+}
+
+.blui-user-menu-avatar {
+    display: flex;
+    border-radius: 50%;
+}
+.blui-user-menu-avatar-content {
+    height: $size;
+    width: $size;
+    line-height: $size;
+    cursor: pointer;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    img {
+        width: 100%;
+        height: 100%;
+    }
+    .mat-icon {
+        align-self: center;
+        @include scale-icon-content();
+    }
+}
+
+mat-card.blui-user-menu-overlay {
+    padding: 0;
+}
+
+.blui-user-menu-text-avatar {
+    margin-bottom: 0;
+    font-weight: 400;
+    line-height: $size;
+}
+
+.blui-user-menu-header mat-toolbar {
+    border-top-left-radius: 4px;
+    border-top-right-radius: 4px;
+    .blui-drawer-header-title {
+        font-size: 1rem;
+    }
+    .blui-drawer-header-subtitle {
+        font-size: 0.875rem;
+    }
+}
+.blui-user-menu-bottomsheet .blui-user-menu-header mat-toolbar {
+    border-top-left-radius: 0px;
+    border-top-right-radius: 0px;
+}
+
+.cdk-overlay-backdrop-showing {
+    &.blui-user-menu-overlay-backdrop {
+        background-color: unset;
+    }
+    &.blui-user-menu-bottomsheet-backdrop {
+        background-color: #424e54;
+        opacity: 0.5;
+    }
+}
+.cdk-overlay-backdrop.blui-user-menu-bottomsheet-backdrop,
+.cdk-overlay-backdrop.blui-user-menu-overlay-backdrop {
+    transition: all 400ms cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+.blui-user-menu-overlay,
+.blui-user-menu-bottomsheet {
+    .mat-list-base .mat-list-item.blui-info-list-item-content .blui-info-list-item-title-wrapper {
+        font-weight: 400;
+    }
+}
+
+.blui-user-menu-bottomsheet.mat-bottom-sheet-container {
+    padding: 0;
+}
+
+.blui-user-menu-bottomsheet .mat-toolbar-single-row {
+    height: 4rem;
+}

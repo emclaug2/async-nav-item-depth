@@ -1,0 +1,43 @@
+<blui-drawer [open]="true">
+  <blui-drawer-header title="PX Blue Drawer" subtitle="with nested nav items">
+  </blui-drawer-header>
+  <blui-drawer-body>
+    <blui-drawer-nav-group>
+      <blui-drawer-nav-item
+        *ngFor="let navItem of correctExample"
+        [title]="navItem.title"
+      >
+        <blui-drawer-nav-item
+          *ngFor="let nestedItem of navItem.items"
+          [title]="nestedItem.title"
+        >
+          <blui-drawer-nav-item
+            *ngFor="let deepItem of nestedItem.items"
+            [title]="deepItem.title"
+          >
+          </blui-drawer-nav-item>
+        </blui-drawer-nav-item>
+      </blui-drawer-nav-item>
+    </blui-drawer-nav-group>
+    <blui-drawer-nav-group>
+      <blui-drawer-nav-item
+        *ngFor="let navItem of incorrectExample$ | async"
+        [title]="navItem.title"
+      >
+        <blui-drawer-nav-item
+          *ngFor="let nestedItem of navItem.items"
+          [title]="nestedItem.title"
+        >
+          <blui-drawer-nav-item
+            *ngFor="let deepItem of nestedItem.items"
+            [title]="deepItem.title"
+          >
+          </blui-drawer-nav-item>
+        </blui-drawer-nav-item>
+      </blui-drawer-nav-item>
+    </blui-drawer-nav-group>
+  </blui-drawer-body>
+  <blui-drawer-footer [divider]="true" [hideContentOnCollapse]="false">
+    <span>Footer goes here</span>
+  </blui-drawer-footer>
+</blui-drawer>
